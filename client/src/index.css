@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
-.font-serif {
-  font-family: "Playfair Display", serif;
+body {
+  background-color: #F6F1E4;
+  color: #23231F;
+}
+
+.shine-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.shine-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+.shine-btn:hover::before {
+  transform: translateX(120%);
 }

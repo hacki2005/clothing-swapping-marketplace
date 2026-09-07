@@ -9,7 +9,7 @@ import ItemDetailPage from "./pages/ItemDetailPage";
 import SwapRequestPage from "./pages/SwapRequestPage";
 import DashboardPage from "./pages/DashboardPage";
 import ChatPage from "./pages/ChatPage";
-// import AdminPanelPage from "./pages/AdminPanelPage";
+import AdminPanelPage from "./pages/AdminPanelPage";
 
 function App() {
   return (
@@ -48,14 +48,14 @@ function App() {
             }
           />
 
-          {/* <Route
+          <Route
             path="/admin"
             element={
               <ProtectedRoute>
                 <AdminPanelPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

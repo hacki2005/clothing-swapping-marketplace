@@ -11,38 +11,41 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-      <Link to="/" className="text-xl font-bold text-blue-600">
-        SwapMarket
+    <nav
+      aria-label="Main navigation"
+      className="flex items-center justify-between px-8 py-5 bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50"
+    >
+      <Link to="/" className="font-['Fraunces'] text-2xl font-semibold text-[#23231F] tracking-tight">
+        Re:Wear
       </Link>
 
-      <div className="flex items-center gap-4">
-        <Link to="/" className="text-gray-700 hover:text-blue-600">
-          Listings
+      <div className="flex items-center gap-7 text-sm font-medium">
+        <Link to="/" className="text-[#3D4A34] hover:text-[#23231F] transition-colors focus:outline-none focus:ring-2 focus:ring-[#B5592F] rounded-full px-2 py-1">
+          Browse
         </Link>
 
         {currentUser ? (
           <>
-            <Link to="/dashboard" className="text-gray-700 hover:text-blue-600">
+            <Link to="/dashboard" className="text-[#3D4A34] hover:text-[#23231F] transition-colors focus:outline-none focus:ring-2 focus:ring-[#B5592F] rounded-full px-2 py-1">
               Dashboard
             </Link>
-            <Link to="/admin" className="text-gray-700 hover:text-blue-600">
+            <Link to="/admin" className="text-[#3D4A34] hover:text-[#23231F] transition-colors focus:outline-none focus:ring-2 focus:ring-[#B5592F] rounded-full px-2 py-1">
               Admin
             </Link>
-            <span className="text-sm text-gray-500">Hi, {currentUser.name}</span>
+            <span className="text-[#7A7264]">{currentUser.name}</span>
             <button
               onClick={handleLogout}
-              className="px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600"
+              className="shine-btn px-4 py-2 min-h-[44px] rounded-full bg-[#23231F] text-[#F6F1E4] shadow-sm hover:shadow-md hover:bg-[#3D4A34] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B5592F] transition-all"
             >
-              Logout
+              Log out
             </button>
           </>
         ) : (
           <Link
             to="/login"
-            className="px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700"
+            className="shine-btn px-4 py-2 min-h-[44px] rounded-full bg-[#B5592F] text-[#F6F1E4] shadow-sm hover:shadow-md hover:bg-[#9c4a26] transition-all inline-flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B5592F]"
           >
-            Login
+            Log in
           </Link>
         )}
       </div>
